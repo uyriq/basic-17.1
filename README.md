@@ -6,5 +6,7 @@
     Метод handleTemperatureDecrease понижает температуру. Этот метод также влияет на this.state.temperature, уменьшая её на единицу, но не ниже чем в константе MIN_TEMPERATURE. Используйте MIN_TEMPERATURE внутри метода, чтоб ограничить понижение температуры значением из этой константы. Метод передаётся в компонент MainDashboard в виде пропса onDecreaseClick.
 
 
+Чтобы ограничить повышение и понижение температуры используйте в соответствующих методах конструкцию вида: if (this.state.temperature <= MIN_TEMPERATURE) return;. Для включения и выключения используйте логический оператор НЕ(!) перед this.state.enabled в this.setState.
+
 # basic-17.1
 Created with CodeSandbox
