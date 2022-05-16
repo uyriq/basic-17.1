@@ -22,7 +22,7 @@ export default class App extends React.Component {
           <h1 className={styles.title}>Гостиная</h1>
           <div className={styles.card}>
             <div className={styles.column}>
-              <SwitchControl enabled={enabled} onClick={/* Здесь ваш код */} />
+              <SwitchControl enabled={enabled} onClick={console.log("Здесь ваш код")} />
               <div>
                 <span className={styles.iconFan} />
                 <label>
@@ -33,7 +33,7 @@ export default class App extends React.Component {
                         key={`flow_elem${elem}`}
                         flow={elem}
                         selectedFlow={this.state.flow}
-                        onClick={/* Здесь ваш код */}
+                        onClick={console.log("Здесь ваш код")}
                       />
                     ))}
                   </div>
@@ -42,8 +42,8 @@ export default class App extends React.Component {
             </div>
             <MainDashboard
               temperature={this.state.temperature}
-              onIncreaseClick={/* Здесь ваш код */}
-              onDecreaseClick={/* Здесь ваш код */}
+              onIncreaseClick={console.log("Здесь ваш код")}
+              onDecreaseClick={console.log("Здесь ваш код")}
             />
             <div className={styles.column}>
               <span className={styles.iconDrop} />
