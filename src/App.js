@@ -24,7 +24,7 @@ export default class App extends React.Component {
 
   handleFlowSelect = (value,key) =>{
     console.log("выбрали скорость обдува")
-    console.log(key,...value)
+    console.log(key,value)
   }
 
   render() {
