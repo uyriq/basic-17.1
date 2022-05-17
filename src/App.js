@@ -31,7 +31,7 @@ export default class App extends React.Component {
           <h1 className={styles.title}>Гостиная</h1>
           <div className={styles.card}>
             <div className={styles.column}>
-              <SwitchControl enabled={enabled} onClick={handlePowerSwitch} />
+              <SwitchControl enabled={enabled} onClick={this.handlePowerSwitch} />
               <div>
                 <span className={styles.iconFan} />
                 <label>
