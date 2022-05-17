@@ -13,6 +13,15 @@ export default class App extends React.Component {
 
   /* Здесь ваш код */
 
+  handlePowerSwitch = () => { 
+    console.log("Здесь ваш код")
+    this.setState((prevState) => ({
+      ...prevState, 
+         enabled: !this.state.enabled
+    }
+    ))
+  }
+
   render() {
     const { enabled } = this.state;
 
@@ -22,7 +31,7 @@ export default class App extends React.Component {
           <h1 className={styles.title}>Гостиная</h1>
           <div className={styles.card}>
             <div className={styles.column}>
-              <SwitchControl enabled={enabled} onClick={console.log("Здесь ваш код")} />
+              <SwitchControl enabled={enabled} onClick={handlePowerSwitch} />
               <div>
                 <span className={styles.iconFan} />
                 <label>
