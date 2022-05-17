@@ -22,9 +22,36 @@ export default class App extends React.Component {
     ))
   }
 
-  handleFlowSelect = (value,key) =>{
+  handleFlowSelect = (value) =>{
     console.log("выбрали скорость обдува")
-    console.log(key,value)
+    console.log(value)
+    this.setState((prevState) => ({
+      ...prevState, 
+         flow: value
+    }
+    ))
+  }
+  
+  handleTemperatureIncrease = () => {
+    console.log("+ температура")
+    if (this.state.temperature >= MAX_TEMPERATURE) return
+    this.setState((prevState) => ({
+      ...prevState, 
+         temperature: this.state.temperature+1
+    }
+    ))
+  }
+
+ 
+  handleTemperatureDecrease = () => {
+    console.log("- температура")
+    if (this.state.temperature <= MIN_TEMPERATURE) return
+    this.setState((prevState) => ({
+      ...prevState, 
+         temperature: this.state.temperature-1
+    }
+    ))
+
   }
 
   render() {
@@ -56,8 +83,8 @@ export default class App extends React.Component {
             </div>
             <MainDashboard
               temperature={this.state.temperature}
-              onIncreaseClick={console.log("Здесь ваш код")}
-              onDecreaseClick={console.log("Здесь ваш код")}
+              onIncreaseClick={this.handleTemperatureIncrease}
+              onDecreaseClick={this.handleTemperatureDecrease}
             />
             <div className={styles.column}>
               <span className={styles.iconDrop} />
