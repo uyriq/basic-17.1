@@ -14,12 +14,17 @@ export default class App extends React.Component {
   /* Здесь ваш код */
 
   handlePowerSwitch = () => { 
-    console.log("Здесь ваш код")
+    console.log("нажали кнопку Вкл/Выкл")
     this.setState((prevState) => ({
       ...prevState, 
          enabled: !this.state.enabled
     }
     ))
+  }
+
+  handleFlowSelect = (value,key) =>{
+    console.log("выбрали скорость обдува")
+    console.log(key,...value)
   }
 
   render() {
@@ -42,7 +47,7 @@ export default class App extends React.Component {
                         key={`flow_elem${elem}`}
                         flow={elem}
                         selectedFlow={this.state.flow}
-                        onClick={console.log("Здесь ваш код")}
+                        onClick={this.handleFlowSelect}
                       />
                     ))}
                   </div>
